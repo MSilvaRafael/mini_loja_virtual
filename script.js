@@ -3,21 +3,21 @@ const itens = [
         id: 0,
         nome: 'blusa',
         img: 'images/shirt.jpg',
-        preço: 0,
+        preço: 20,
         qtd: 0
     },
     {
         id: 1,
         nome: 'short',
         img: 'images/short.jpg',
-        preço: 0,
+        preço: 30,
         qtd: 0
     },
     {
         id: 2,
         nome: 'calça',
         img: 'images/pants.jpg',
-        preço: 0,
+        preço: 40,
         qtd: 0
     }
 ]
@@ -25,7 +25,7 @@ const itens = [
 showShop = () => {
     let containerProduct = document.getElementById('produtos')
     itens.map((val) => {
-        containerProduct.innerHTML += '<div class="single-product"><img src="'+val.img+'"/><p>'+val.nome+'</p><a key="'+val.id+'" href="#">Adicionar ao Carrinho</a></div>';
+        containerProduct.innerHTML += '<div class="single-product"><img src="'+val.img+'"/><p> '+val.nome+'</p><p>R$ '+val.preço+',00</p><a key="'+val.id+'" href="#">Adicionar ao Carrinho</a></div>';
     });
 }
 
@@ -36,7 +36,8 @@ updateCar = () => {
     containerCar.innerHTML = ''
     itens.map((val) => {
         if(val.qtd > 0){
-            containerCar.innerHTML += ' <div class="single-car"><p>Produto: '+val.nome+' </p> <p class="qtd"> Quantidade: '+val.qtd+' </p></div> ';
+            var prc = val.preço*val.qtd
+            containerCar.innerHTML += ' <div class="single-car"><p>Produto: '+val.nome+' </p> <p class="qtd"> Quantidade: '+val.qtd+' </p> <p>Preço: R$ '+prc+',00</p></div> ';
         }
     })
     

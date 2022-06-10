@@ -17,10 +17,11 @@ img{
 }
 
 h2{
-    background-color: rgb(55, 155, 95);
-    color: rgb(255, 255, 245);
     text-align: center;
     padding: 10px 0;
+    margin-top: 15px;
+    border-bottom: 2px solid rgb(55, 155, 155);
+    color: rgb(55, 65, 75);
 }
 
 p{
@@ -28,6 +29,8 @@ p{
     text-align: center;
     display: flex;
     justify-content: space-around;
+    color: rgb(55, 65, 75);
+    font-weight: 400;
 }
 
 i{
